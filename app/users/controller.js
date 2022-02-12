@@ -8,14 +8,14 @@ module.exports = {
       const alertStatus = req.flash("alertStatus");
 
       const alert = { message: alertMessage, status: alertStatus };
-        if (req.session.user === null || req.session.user === undefined) {
-      res.render("admin/users/view_signin", {
-        alert,
-        title: "Halaman signin",
-      });
-        } else {
-          res.redirect("/dashboard");
-        }
+      if (req.session.user === null || req.session.user === undefined) {
+        res.render("admin/users/view_signin", {
+          alert,
+          title: "Halaman signin",
+        });
+      } else {
+        res.redirect("/dashboard");
+      }
     } catch (err) {
       req.flash("alertMessage", `${err.message}`);
       req.flash("alertStatus", "danger");

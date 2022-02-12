@@ -13,7 +13,7 @@ module.exports = {
         transaction,
         alert,
         name: req.session.user.name,
-        title: "Halaman transaksi",
+        title: "Halaman metode pembayaran",
       });
     } catch (err) {
       req.flash("alertMessage", `${err.message}`);
