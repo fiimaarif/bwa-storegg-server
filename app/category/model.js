@@ -4,7 +4,7 @@ let categorySchema = mongoose.Schema(
   {
     name: {
       type: String,
-      require: [true, "Nama kategori harus diiisi"],
+      require: [true, "Nama kategori harus diisi"],
     },
   },
   { timestamps: true }
