@@ -243,7 +243,6 @@ module.exports = {
   editProfile: async (req, res, next) => {
     try {
       const { name = "", phoneNumber = "" } = req.body;
-
       const payload = {};
 
       if (name.length) payload.name = name;
@@ -268,8 +267,8 @@ module.exports = {
 
         src.on("end", async () => {
           let player = await Player.findOne({ _id: req.player._id });
-
           let currentImage = `${config.rootPath}/public/uploads/${player.avatar}`;
+
           if (fs.existsSync(currentImage)) {
             fs.unlinkSync(currentImage);
           }
@@ -285,7 +284,7 @@ module.exports = {
             { new: true, runValidators: true }
           );
 
-          console.log(player);
+          // console.log(player)
 
           res.status(201).json({
             data: {
