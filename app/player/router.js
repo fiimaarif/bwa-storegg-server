@@ -24,7 +24,7 @@ router.get("/history/:id/detail", isLoginPlayer, historyDetail);
 router.get("/dashboard", isLoginPlayer, dashboard);
 router.get("/profile", isLoginPlayer, profile);
 router.put(
-  "/profile",
+  "/profile/:id",
   isLoginPlayer,
   multer({ dest: os.tmpdir() }).single("image"),
   editProfile
